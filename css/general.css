@@ -26,7 +26,7 @@ Ingredients
     --shades(darker version):#cf711f
     --tints(lighter version):#fdf2e9
     --accents:
-    --grey color: #333 #555 #6c747f
+    --grey color: #333 #555 #6c747f #767676
 --------------------------------------------------------------------------------------------------
 
 ---03.Images
@@ -65,9 +65,13 @@ Ingredients
 * {
   margin: 0;
   padding: 0;
-  box-sizing: content-box;
+  box-sizing: border-box;
 }
 
+*:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.8rem rgba(230, 125, 34, 0.5);
+}
 html {
   /*1rem=10px*/
   font-size: 62.5%;
@@ -142,6 +146,12 @@ strong {
   grid-template-columns: repeat(4, 1fr);
 }
 
+.grid--5-col {
+  grid-template-columns: repeat(5, 1fr);
+}
+.grid--footer {
+  grid-template-columns: 1fr 1.5fr 1fr 1.2fr 1fr;
+}
 .grid--center-v {
   align-items: center;
 }
