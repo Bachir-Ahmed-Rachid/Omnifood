@@ -1,0 +1,298 @@
+/*Note1:*/
+/* in media queries rem/em is not relative to html font-size it's always 1rem=1em=16px*/
+/*Note2:*/
+/* to get breakpoint we use the perfect method+good method*/
+
+/******************************/
+/* Below 85rem(~1344px) */
+/******************************/
+@media (max-width: 84rem) {
+  .hero__container {
+    max-width: 120rem;
+  }
+  .heading-primary {
+    font-size: 4.4rem;
+  }
+
+  .gallery-col {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/******************************/
+/* Below 75rem(~1200px) */
+/******************************/
+@media (max-width: 75rem) {
+  /*   The unit rem is relative the root so by change the font size of html(root)
+       we can change the all the unit in our page 
+    */
+  html {
+    /*1rem=9px*/
+    font-size: 56.25%;
+  }
+  .hero__container {
+    gap: 4.8rem;
+  }
+  .heading-secondary {
+    font-size: 3.6rem;
+  }
+  .heading-tertiary {
+    font-size: 2.4rem;
+  }
+
+  .grid {
+    column-gap: 4.8rem;
+    row-gap: 6.4rem;
+  }
+
+  .header__nav-list {
+    gap: 3.2rem;
+  }
+
+  .testimonial-col {
+    padding: 9.6rem 3.2rem;
+  }
+
+  .header {
+    padding: 0 3.2rem;
+  }
+  .features-in__imgs img {
+    height: 2.4rem;
+  }
+}
+
+/******************************/
+/* Below 75rem(~912px) */
+/******************************/
+@media (max-width: 57rem) {
+  html {
+    /*1rem=8px*/
+    font-size: 50%;
+  }
+
+  .hero__container {
+    grid-template-columns: 1fr;
+    padding: 0 8rem;
+  }
+
+  .hero__text-box,
+  .hero__img-container {
+    /* we can apply text-align:center to all inline element */
+    text-align: center;
+  }
+
+  .hero__img {
+    width: 60%;
+  }
+
+  .hero__meals-delivered {
+    justify-content: center;
+    margin-top: 3.2rem;
+  }
+  .hero__container {
+    gap: 6.4rem;
+  }
+
+  .how-it-work__number {
+    font-size: 7.4rem;
+  }
+
+  .meals__card-content {
+    padding: 2.4rem 3.2rem 3.2rem 3.2rem;
+  }
+
+  .testimonial {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-col {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .cta__container {
+    /* 3/5 = 60 2/5=40*/
+    grid-template-columns: 3fr 2fr;
+  }
+
+  .cta__form {
+    grid-template-columns: 1fr;
+  }
+
+  .btn--form {
+    margin-top: 1.2rem;
+  }
+
+  /* Mobile navigation */
+  .mobile-nav {
+    display: block;
+    z-index: 50000;
+  }
+
+  .header__nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.97);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    transform: translateX(100%);
+    transition: all 0.6s ease-out /*ease-out:move fast after the slower*/;
+    -webkit-transition: all 0.6s ease-out /**/;
+    -moz-transition: all 0.6s ease-out /**/;
+    -ms-transition: all 0.6s ease-out /**/;
+    -o-transition: all 0.6s ease-out /**/;
+    -webkit-transform: translateX(100%);
+    -moz-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    -o-transform: translateX(100%);
+    /* We need to hide the element without using display:none(so we can apply the animation) */
+    /* 1 Hide it visually*/
+    opacity: 0;
+
+    /* 2 Make it unassailable to the mouse and yhe keyboard*/
+    pointer-events: none;
+
+    /* 3 Make it unassailable to the screen reader*/
+    visibility: hidden;
+  }
+
+  .header__nav-list {
+    flex-direction: column;
+    justify-content: center;
+    gap: 4.8rem;
+  }
+
+  .nav-open .header__nav {
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+  }
+
+  .nav-open .mobile-nav__icon[name="grid-outline"] {
+    display: none;
+  }
+  .nav-open .mobile-nav__icon[name="close-outline"] {
+    display: block;
+  }
+  .header__nav-link:link,
+  .header__nav-link:visited {
+    font-size: 3rem;
+  }
+}
+
+/******************************/
+/* Below 44rem(~704px) */
+/******************************/
+
+@media (max-width: 44rem) {
+  .heading-secondary {
+    margin-bottom: 4.8rem;
+  }
+
+  .grid--3-col,
+  .grid--4-col {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .meals__details {
+    justify-self: center;
+    grid-column: 1/-1;
+  }
+
+  .grid--footer {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .footer__nav {
+    grid-row: 1;
+    grid-column: span 2;
+    margin-bottom: 3.2rem;
+  }
+
+  .footer__logo,
+  .footer__address {
+    grid-column: span 3;
+  }
+
+  .pricing__card {
+    width: 100%;
+  }
+}
+
+/******************************/
+/* Below 34rem(~544px) */
+/******************************/
+
+@media (max-width: 34rem) {
+  .hero__img {
+    width: 100%;
+  }
+
+  .features-in__imgs img {
+    height: 1.2rem;
+  }
+
+  .grid {
+    row-gap: 4.8rem;
+  }
+  .grid--2-col,
+  .grid--3-col,
+  .grid--4-col,
+  .grid--5-col,
+  .testimonial__grid,
+  .cta__container {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-col {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.2rem;
+  }
+
+  .how-it-work__img-container:nth-child(2) {
+    grid-row: 1;
+  }
+
+  .how-it-work__img-container:nth-child(6) {
+    grid-row: 5;
+  }
+
+  .how-it-work__text-conatiner {
+    /* we use translate here te reduce the space between elements so we don't use gap because it will affect others grids */
+    transform: translateY(-2.4);
+    -webkit-transform: translateY(-2.4);
+    -moz-transform: translateY(-2.4);
+    -ms-transform: translateY(-2.4);
+    -o-transform: translateY(-2.4);
+  }
+  .cta__img {
+    height: 32rem;
+    grid-row: 1;
+  }
+
+  .hero {
+    padding: 2.4rem 0 6rem 0;
+  }
+
+  .hero__container {
+    padding: 0 3.2rem;
+  }
+
+  .cta__text-container {
+    padding: 3.2rem;
+  }
+
+  .btn,
+  .hero__btn:link,
+  .hero__btn:visited {
+    padding: 2.4rem 1.6rem;
+  }
+}
